@@ -175,7 +175,7 @@ class Players
           puts "That space has already been chosen, please select a new space"
           return move() 
         when player1_selection.match(/[a-z]/i)
-          puts "Invalid choice! Please pick a number from 1-10"
+          puts "Invalid choice! Please pick a number from 1-9"
           return move()
      end
     
@@ -201,7 +201,7 @@ class Players
           puts "That space has already been chosen, please select a new space"
           return move2() 
         when player2_selection.match(/[a-z]/i)
-          puts "Invalid choice! Please pick a number from 1-10"
+          puts "Invalid choice! Please pick a number from 1-9"
           return move2()
       end
       @@board2 = @@board2.join(',').gsub!("#{player2_selection}", "O").split(',')
