@@ -177,6 +177,12 @@ class Players
         when player1_selection.match(/[a-z]/i)
           puts "Invalid choice! Please pick a number from 1-9"
           return move()
+        when player1_selection.length > 1
+          puts "Hmm...I don't think you can do that. Please try again."
+          return move()
+        when player1_selection == ""
+          puts "OOOPS!!! I think you forgot to enter a number"
+          return move()
      end
     
       @@board2 = @@board2.join(',').gsub!("#{player1_selection}", "X").split(',')
@@ -202,6 +208,12 @@ class Players
           return move2() 
         when player2_selection.match(/[a-z]/i)
           puts "Invalid choice! Please pick a number from 1-9"
+          return move2()
+        when player2_selection.length > 1
+          puts "Hmm...I don't think you can do that. Please try again."
+          return move2()
+        when player2_selection == ""
+          puts "OOOPS!!! I think you forgot to enter a number"
           return move2()
       end
       @@board2 = @@board2.join(',').gsub!("#{player2_selection}", "O").split(',')
