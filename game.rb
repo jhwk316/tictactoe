@@ -44,12 +44,14 @@ class Game
   attr_reader :user_choice
 
   def initialize
+    splash
     @new_game = Board.new
     Player.new(player1, player2)
     welcome
     puts
-    player_names
+    player1_name
     @player1 = gets.chomp.capitalize
+    player2_name
     @player2 = gets.chomp.capitalize
     new_game.draw_board
   end
