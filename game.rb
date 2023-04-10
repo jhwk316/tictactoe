@@ -127,7 +127,7 @@ class Game
       break if winner?
     end
     tie if counter == 9 && !winner?
-    play_again if winner?
+    play_again if winner? || counter == 9
    
   end
 
